@@ -77,7 +77,7 @@ describe("render(state) — the single render pass", () => {
     expect(group("chat-client").style.opacity).not.toBe("");
   });
 
-  test("onSelect wires hit-area click and keyboard", () => {
+  test("onSelect wires hit-area click and keyboard (Enter and Space)", () => {
     const selected = [];
     const view = createGraphView(document, { onSelect: id => selected.push(id) });
     view.render({ selected: "chat-client", filter: "all" });
@@ -85,7 +85,41 @@ describe("render(state) — the single render pass", () => {
     const hit = document.querySelector(`#nodesLayer .node-set[data-id="mcp"] .node-hit`);
     hit.dispatchEvent(new MouseEvent("click", { bubbles: true }));
     hit.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
+    hit.dispatchEvent(new KeyboardEvent("keydown", { key: " ", bubbles: true, cancelable: true }));
 
-    expect(selected).toEqual(["mcp", "mcp"]);
+    expect(selected).toEqual(["mcp", "mcp", "mcp"]);
+  });
+
+  test("every concept is focusable with a truthful aria-label", () => {
+    createGraphView(document, { onSelect: () => {} });
+    const hits = document.querySelectorAll("#nodesLayer .node-hit");
+    expect(hits.length).toBe(37);
+    for (const hit of hits) {
+      expect(hit.getAttribute("tabindex")).toBe("0");
+      expect(hit.getAttribute("role")).toBe("button");
+      expect(hit.getAttribute("aria-label")).toMatch(/^[a-z0-9-]+, (understood|practicing|introduced|not yet)$/);
+    }
+  });
+
+  test("panel shows the curated record's evidence and cta", () => {
+    const view = createGraphView(document, { onSelect: () => {} });
+    view.render({ selected: "tool-calling", filter: "all" });
+
+    const evidence = [...document.querySelectorAll("#evidence .evidence-text")].map(e => e.textContent);
+    expect(evidence.some(t => t.includes("@Tool"))).toBe(true);
+    expect(document.getElementById("ctaBtn").textContent).toBe("Introduced — first pass");
+    expect(document.getElementById("statusTag").textContent).toBe("introduced");
+  });
+
+  test("every concept can drive the stage without breaking the render", () => {
+    const view = createGraphView(document, { onSelect: () => {} });
+    const ids = [...document.querySelectorAll("#nodesLayer .node-set")].map(g => g.dataset.id);
+    expect(ids.length).toBe(37);
+
+    for (const id of ids) {
+      view.render({ selected: id, filter: "all" });
+      expect(document.getElementById("traceName").textContent).toBe(id);
+      expect(document.getElementById("countText").textContent).toBe("5 of 37 concepts on the tree");
+    }
   });
 });

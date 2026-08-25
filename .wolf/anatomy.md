@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-08-25T07:05:55.778Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-08-25T07:10:15.389Z
 > Files: 22 tracked | Anatomy hits: 0 | Misses: 0
 
 > Project structure index. Auto-maintained by OpenWolf hooks and daemon.
@@ -41,5 +41,5 @@
 - `graph.test.js` — Declares ids (~356 tok)
 - `helpers.js` — Exports loadPage (~75 tok)
 - `record.test.js` — Declares id (~588 tok)
-- `render.test.js` — Declares edgeBetween (~1353 tok)
+- `render.test.js` — Declares edgeBetween (~1842 tok)
 - `smoke.test.js` (~147 tok)
