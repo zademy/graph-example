@@ -1,12 +1,12 @@
 {
   "version": 1,
   "meta": {
-    "lastScanned": "2026-08-25T12:00:00.113Z",
+    "lastScanned": "2026-08-25T22:06:48.669Z",
     "fileCount": 26,
     "hits": 0,
     "misses": 0,
-    "renderedHash": "581f8d4aa4ae69c5f8ca84d53589c4444c7a0a7a97bfc87796066c577f13647b",
-    "storeUpdatedAt": "2026-08-25T12:00:00.114Z",
+    "renderedHash": "1dc552897dd6afc257ff983a7bf3bce8bdca8abeed9e529d702f728583e40c5e",
+    "storeUpdatedAt": "2026-08-25T22:06:48.674Z",
     "rootHash": "686b7c5754ed0356"
   },
   "files": {
@@ -91,17 +91,13 @@
       "importance": 0.1643
     },
     "app.js": {
-      "description": "Boot: owns the app state and routes every interaction through",
-      "tokens": 196,
-      "hash": "c1acad7389584ab6",
-      "size": 683,
-      "mtimeMs": 1787641181216.6316,
-      "updatedAt": "2026-08-25T12:00:00.043Z",
-      "source": "scan",
-      "imports": [
-        "src/render.js"
-      ],
-      "importance": 0.2341
+      "description": "Declares state",
+      "tokens": 440,
+      "hash": "4120725c67fd3986",
+      "size": 1541,
+      "mtimeMs": 1787688633828.0803,
+      "updatedAt": "2026-08-25T20:10:43.672Z",
+      "source": "hook"
     },
     "CLAUDE.md": {
       "description": "OpenWolf",
@@ -144,14 +140,13 @@
       "importance": 0.1643
     },
     "index.html": {
-      "description": "Spring AI Knowledge Graph — Altitude inspired",
-      "tokens": 4265,
-      "hash": "5a0f5dcbc5bac2e2",
-      "size": 16007,
-      "mtimeMs": 1787642690861.2117,
-      "updatedAt": "2026-08-25T12:00:00.048Z",
-      "source": "scan",
-      "importance": 0.1643
+      "description": "",
+      "tokens": 5887,
+      "hash": "f663a8efecb56163",
+      "size": 22091,
+      "mtimeMs": 1787695567325.572,
+      "updatedAt": "2026-08-25T22:06:07.414Z",
+      "source": "hook"
     },
     "package.json": {
       "description": "Node.js package manifest",
@@ -174,14 +169,13 @@
       "importance": 0.1643
     },
     "src/data.js": {
-      "description": "Spring AI 2.0.1 — full dataset.",
-      "tokens": 3041,
-      "hash": "39d05b0c3e937f86",
-      "size": 10754,
-      "mtimeMs": 1787642580656.8176,
-      "updatedAt": "2026-08-25T12:00:00.051Z",
-      "source": "scan",
-      "importance": 1
+      "description": "Exports W, H, SECTION_LABELS, concepts + 3 more",
+      "tokens": 3366,
+      "hash": "2a56c54093fb7394",
+      "size": 11892,
+      "mtimeMs": 1787685585047.2246,
+      "updatedAt": "2026-08-25T19:19:45.485Z",
+      "source": "hook"
     },
     "src/graph.js": {
       "description": "Graph module: owns concept adjacency (prerequisite relations).",
@@ -211,44 +205,13 @@
       "importance": 0.3568
     },
     "src/render.js": {
-      "description": "render(state): the ONLY writer of the stage's visual channels —",
-      "tokens": 2227,
-      "hash": "9c1df9dc8ab4e09f",
-      "size": 7797,
-      "mtimeMs": 1787642673876.3728,
-      "updatedAt": "2026-08-25T12:00:00.052Z",
-      "source": "scan",
-      "symbols": [
-        {
-          "name": "passesFilter",
-          "kind": "fn",
-          "startLine": 45,
-          "endLine": 48,
-          "tokens": 41
-        },
-        {
-          "name": "svgEl",
-          "kind": "fn",
-          "startLine": 50,
-          "endLine": 54,
-          "tokens": 51
-        },
-        {
-          "name": "createGraphView",
-          "kind": "fn",
-          "startLine": 56,
-          "endLine": 228,
-          "tokens": 1660
-        }
-      ],
-      "symbolSource": "ts",
-      "skeleton": "function passesFilter(id, state) {\nfunction svgEl(doc, name, attrs = {}) {\nexport function createGraphView(doc, { onSelect } = {}) {",
-      "imports": [
-        "src/graph.js",
-        "src/record.js",
-        "src/data.js"
-      ],
-      "importance": 0.4331
+      "description": "Exports createGraphView",
+      "tokens": 2246,
+      "hash": "6437beb7a1e4463a",
+      "size": 7862,
+      "mtimeMs": 1787695590654.7412,
+      "updatedAt": "2026-08-25T22:06:48.669Z",
+      "source": "hook"
     },
     "tests/graph.test.js": {
       "description": "Declares ids",

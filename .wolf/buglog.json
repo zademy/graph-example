@@ -80,6 +80,103 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-08-25T07:10:15.399Z"
+    },
+    {
+      "id": "bug-006",
+      "timestamp": "2026-08-25T19:20:00.000Z",
+      "error_message": "Etiqueta 'question-answer-advisor' cortada en el borde derecho del grafo",
+      "file": "src/data.js",
+      "root_cause": "Nodo en x=545 con label de 24 chars (~80px de ancho) en viewBox de 570: el texto excedía el límite y .stage tiene overflow:hidden",
+      "fix": "ViewBox ampliado a 640x520 y nodo movido a x=555; verificación DOM de bounding boxes confirma 0 labels cortados",
+      "tags": [
+        "layout",
+        "svg",
+        "label-clipping"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T19:20:00.000Z"
+    },
+    {
+      "id": "bug-007",
+      "timestamp": "2026-08-25T19:20:00.000Z",
+      "error_message": "404 de favicon.ico en consola",
+      "file": "index.html",
+      "root_cause": "No existía favicon y el navegador pedía /favicon.ico por defecto",
+      "fix": "Favicon SVG inline via data URI (círculo coral) en el <head>",
+      "tags": [
+        "favicon",
+        "404",
+        "html"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T19:20:00.000Z"
+    },
+    {
+      "id": "bug-008",
+      "timestamp": "2026-08-25T20:10:00.000Z",
+      "error_message": "TypeError: Cannot read properties of undefined (reading 'getItem') en app.js al correr vitest",
+      "file": "app.js",
+      "root_cause": "localStorage es undefined en el jsdom de vitest (sin url http); el smoke test importa app.js y rompía en el acceso directo",
+      "fix": "Helper storedTheme() con try/catch + optional chaining (localStorage?.getItem) y setItem envuelto en try/catch",
+      "tags": [
+        "localStorage",
+        "jsdom",
+        "vitest",
+        "theme"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T20:10:00.000Z"
+    },
+    {
+      "id": "bug-008",
+      "timestamp": "2026-08-25T20:06:05.486Z",
+      "error_message": "Incorrect value in code",
+      "file": "index.html",
+      "root_cause": "Had \"trace\"",
+      "fix": "Changed to \"pill\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "html"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T20:06:05.486Z"
+    },
+    {
+      "id": "bug-009",
+      "timestamp": "2026-08-25T20:10:43.709Z",
+      "error_message": "Missing error handling in storedTheme",
+      "file": "app.js",
+      "root_cause": "Code path had no error handling",
+      "fix": "Added try/catch block",
+      "tags": [
+        "auto-detected",
+        "error-handling",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T20:10:43.709Z"
+    },
+    {
+      "id": "bug-011",
+      "timestamp": "2026-08-25T22:06:48.694Z",
+      "error_message": "Incorrect value in code",
+      "file": "src/render.js",
+      "root_cause": "Had \"-11px\"",
+      "fix": "Changed to \"-13px\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T22:06:48.694Z"
     }
   ]
 }
