@@ -1,5 +1,6 @@
-// Spring AI 2.0.1 — seed dataset (tracer slice).
-// Concept ids use the official docs vocabulary (EN).
+// Spring AI 2.0.1 — full dataset.
+// Concept ids and prerequisite edges follow the official docs vocabulary
+// (docs.spring.io/spring-ai/reference, verified 2026-08-25).
 
 export const W = 570;
 export const H = 495;
@@ -13,51 +14,116 @@ export const SECTION_LABELS = {
 };
 
 export const concepts = [
-  // Fundamentals
-  { id:"ai-concepts", x:85, y:140, status:"understood", important:true, section:"fundamentals" },
-  { id:"chat-model", x:150, y:210, status:"understood", important:true, review:true, section:"fundamentals" },
-  { id:"chat-client", x:225, y:160, status:"understood", important:true, section:"fundamentals" },
-  { id:"prompt-templates", x:140, y:300, status:"practicing", important:true, review:true, section:"fundamentals" },
-  { id:"structured-output", x:205, y:340, status:"introduced", section:"fundamentals" },
-  { id:"multimodality", x:60, y:365, status:"not yet", section:"fundamentals" },
+  // ── Fundamentals ──
+  { id:"ai-concepts", x:60, y:130, status:"understood", important:true, section:"fundamentals" },
+  { id:"chat-model", x:120, y:195, status:"understood", important:true, review:true, section:"fundamentals" },
+  { id:"chat-client", x:185, y:150, status:"understood", important:true, section:"fundamentals" },
+  { id:"prompt-templates", x:95, y:285, status:"practicing", important:true, review:true, section:"fundamentals" },
+  { id:"structured-output", x:160, y:320, status:"introduced", section:"fundamentals" },
+  { id:"multimodality", x:60, y:360, status:"not yet", section:"fundamentals" },
 
-  // Tools & Agents
-  { id:"tool-calling", x:300, y:140, status:"introduced", section:"tools" },
-  { id:"advisors", x:340, y:230, status:"not yet", section:"tools" },
-  { id:"chat-memory", x:330, y:320, status:"not yet", section:"tools" },
-  { id:"mcp", x:395, y:170, status:"not yet", section:"tools" },
+  // ── Chat Models ──
+  { id:"openai", x:255, y:105, status:"practicing", important:true, section:"models" },
+  { id:"anthropic", x:300, y:160, status:"introduced", section:"models" },
+  { id:"ollama", x:240, y:230, status:"not yet", section:"models" },
+  { id:"azure-openai", x:320, y:230, status:"not yet", section:"models" },
+  { id:"google-genai", x:270, y:300, status:"not yet", section:"models" },
+  { id:"bedrock", x:370, y:120, status:"not yet", section:"models" },
+  { id:"mistral", x:360, y:190, status:"not yet", section:"models" },
+  { id:"deepseek", x:395, y:260, status:"not yet", section:"models" },
+  { id:"moderation-models", x:345, y:320, status:"not yet", section:"models" },
+  { id:"image-models", x:430, y:110, status:"not yet", section:"models" },
+  { id:"audio-models", x:455, y:175, status:"not yet", section:"models" },
 
-  // RAG
-  { id:"embeddings", x:300, y:410, status:"not yet", section:"rag" },
-  { id:"vector-store", x:390, y:370, status:"not yet", section:"rag" },
-  { id:"rag", x:470, y:300, status:"not yet", section:"rag" }
+  // ── Tools & Agents ──
+  { id:"tool-calling", x:90, y:410, status:"introduced", important:true, section:"tools" },
+  { id:"agents", x:70, y:462, status:"not yet", section:"tools" },
+  { id:"advisors", x:170, y:435, status:"not yet", section:"tools" },
+  { id:"chat-memory", x:245, y:420, status:"not yet", section:"tools" },
+  { id:"mcp", x:310, y:450, status:"not yet", section:"tools" },
+
+  // ── RAG ──
+  { id:"embeddings", x:455, y:235, status:"not yet", important:true, section:"rag" },
+  { id:"etl-pipeline", x:505, y:290, status:"not yet", section:"rag" },
+  { id:"vector-store", x:425, y:345, status:"not yet", important:true, section:"rag" },
+  { id:"pgvector", x:370, y:420, status:"not yet", section:"rag" },
+  { id:"chroma", x:440, y:430, status:"not yet", section:"rag" },
+  { id:"redis", x:505, y:420, status:"not yet", section:"rag" },
+  { id:"milvus", x:385, y:465, status:"not yet", section:"rag" },
+  { id:"pinecone", x:455, y:465, status:"not yet", section:"rag" },
+  { id:"qdrant", x:535, y:460, status:"not yet", section:"rag" },
+  { id:"rag", x:540, y:320, status:"not yet", important:true, section:"rag" },
+  { id:"question-answer-advisor", x:545, y:380, status:"not yet", section:"rag" },
+
+  // ── Ops ──
+  { id:"observability", x:525, y:95, status:"not yet", section:"ops" },
+  { id:"evaluation", x:505, y:160, status:"not yet", section:"ops" },
+  { id:"testing", x:530, y:225, status:"not yet", section:"ops" },
+  { id:"dev-services", x:480, y:255, status:"not yet", section:"ops" }
 ];
 
 // Prerequisite edges (A → B), following the official docs' dependency order.
 export const edgePairs = [
+  // Fundamentals
   ["ai-concepts","chat-model"],
   ["ai-concepts","multimodality"],
   ["chat-model","chat-client"],
   ["chat-client","prompt-templates"],
   ["chat-client","structured-output"],
   ["prompt-templates","structured-output"],
+
+  // Chat Models realize the ChatModel contract
+  ["chat-model","openai"],
+  ["chat-model","anthropic"],
+  ["chat-model","ollama"],
+  ["chat-model","azure-openai"],
+  ["chat-model","google-genai"],
+  ["chat-model","bedrock"],
+  ["chat-model","mistral"],
+  ["chat-model","deepseek"],
+  ["chat-model","moderation-models"],
+  ["multimodality","image-models"],
+  ["multimodality","audio-models"],
+
+  // Tools & Agents
   ["chat-client","tool-calling"],
   ["chat-client","advisors"],
   ["advisors","chat-memory"],
   ["tool-calling","mcp"],
+  ["tool-calling","agents"],
+
+  // RAG
   ["chat-model","embeddings"],
   ["embeddings","vector-store"],
-  ["vector-store","rag"]
+  ["etl-pipeline","vector-store"],
+  ["vector-store","pgvector"],
+  ["vector-store","chroma"],
+  ["vector-store","redis"],
+  ["vector-store","milvus"],
+  ["vector-store","pinecone"],
+  ["vector-store","qdrant"],
+  ["vector-store","rag"],
+  ["rag","question-answer-advisor"],
+  ["advisors","question-answer-advisor"],
+
+  // Ops
+  ["chat-client","observability"],
+  ["chat-client","evaluation"],
+  ["evaluation","testing"],
+  ["testing","dev-services"]
 ];
 
 export const zones = [
-  { x:55, y:100, label:"FUNDAMENTALS" },
-  { x:285, y:95, label:"TOOLS & AGENTS" },
-  { x:420, y:465, label:"RAG" }
+  { x:50, y:100, label:"FUNDAMENTALS" },
+  { x:235, y:88, label:"CHAT MODELS" },
+  { x:75, y:390, label:"TOOLS & AGENTS" },
+  { x:360, y:390, label:"RAG" },
+  { x:495, y:75, label:"OPS" }
 ];
 
 // Curated Concept Records. NOTE: `status` is intentionally absent —
-// the concept node is the single source of truth for status.
+// the concept node is the single source of truth for status — and
+// `unlocks` is always derived from the graph.
 export const curated = {
   "chat-client":{
     desc:"The ChatClient offers a fluent API for chatting with AI models. It hides the provider: the same call site works over OpenAI, Anthropic or Ollama.",
@@ -70,6 +136,28 @@ export const curated = {
     cta:"Understood — stays lit",
     note:"The builder comes from ChatModel — this is the facade you'll use 90% of the time."
   },
+  "prompt-templates":{
+    desc:"Prompt templates parameterize your prompts with placeholders, so tone and instructions live in one reusable template instead of every call site.",
+    evidence:[
+      ["System and user templates with {placeholders} via PromptTemplate.","docs · Prompts"],
+      ["Extracted the house style guide into a shared system template.","observed · session 5"]
+    ],
+    reviewed:"3 days ago",
+    introduced:"Fundamentals · docs.spring.io/spring-ai",
+    cta:"Practicing — check-in Thu",
+    note:"Two clean check-ins move this to understood."
+  },
+  "structured-output":{
+    desc:"Structured output turns the model's reply into Java objects: call entity(...) and an OutputConverter generates and validates the JSON schema for you.",
+    evidence:[
+      ["entity(Record.class) behind BeanOutputConverter → JsonSchemaGenerator.","docs · Structured Output"],
+      ["Parsed a Book[] out of a raw completion without hand-rolling JSON.","observed · session 6"]
+    ],
+    reviewed:"recently",
+    introduced:"Fundamentals · docs.spring.io/spring-ai",
+    cta:"Introduced — first pass",
+    note:"Pair it with Prompt Templates: the converter appends the schema to the prompt for you."
+  },
   "tool-calling":{
     desc:"Tool calling lets the model invoke your Java methods. In 2.x you register @Tool methods and the ToolCallingAdvisor runs the loop for you.",
     evidence:[
@@ -80,5 +168,49 @@ export const curated = {
     introduced:"Tools & Agents · docs.spring.io/spring-ai",
     cta:"Introduced — first pass",
     note:"Up to 40 tools and 150 tool calls per interaction in 2.0.1."
+  },
+  "chat-memory":{
+    desc:"Chat memory keeps the conversation under a conversationId — mandatory in 2.x. MessageWindowChatMemory is the default windowed store.",
+    evidence:[
+      ["PromptChatMemoryAdvisor removed; use MessageChatMemoryAdvisor.","docs · Chat Memory"],
+      ["Kept a 10-turn conversation coherent under one conversationId.","observed · session 7"]
+    ],
+    reviewed:"not reviewed yet",
+    introduced:"Tools & Agents · docs.spring.io/spring-ai",
+    cta:"Not yet — keep climbing",
+    note:"The JDBC store adds a sequence_id column in 2.0 — plan the migration by hand."
+  },
+  "embeddings":{
+    desc:"The EmbeddingModel turns text and Documents into vectors, so similarity becomes arithmetic you can delegate to a vector store.",
+    evidence:[
+      ["embed() returns one vector per document; allEmbeddings() for batches.","docs · Embeddings"],
+      ["Embedded the handbook once, then queried it by cosine similarity.","observed · session 8"]
+    ],
+    reviewed:"not reviewed yet",
+    introduced:"RAG · docs.spring.io/spring-ai",
+    cta:"Not yet — keep climbing",
+    note:"Prefix per provider in 2.x: spring.ai.openai.embedding.model."
+  },
+  "rag":{
+    desc:"Retrieval Augmented Generation: fetch relevant context from a vector store and append it to the user's prompt, so the model answers from your data.",
+    evidence:[
+      ["The QuestionAnswerAdvisor fetches relevant context and appends it to the prompt.","docs · RAG"],
+      ["Grounded answers in our handbook chunks; invented facts dropped to zero.","observed · session 8"]
+    ],
+    reviewed:"not reviewed yet",
+    introduced:"RAG · docs.spring.io/spring-ai",
+    cta:"Not yet — keep climbing",
+    note:"ETL in, similarity out: this node sits at the end of the retrieval pipeline."
+  },
+  "mcp":{
+    desc:"Model Context Protocol: Spring Boot starters expose your @Tool methods as an MCP server, or consume external tools as an MCP client.",
+    evidence:[
+      ["Annotations moved to org.springframework.ai.mcp.annotation in 2.x.","docs · MCP upgrade notes"],
+      ["Served the same weather tool over MCP and HTTP without rewriting it.","observed · session 9"]
+    ],
+    reviewed:"not reviewed yet",
+    introduced:"Tools & Agents · docs.spring.io/spring-ai",
+    cta:"Not yet — keep climbing",
+    note:"MCP SDK 2.0 options are immutable: mutate() instead of copy()."
   }
 };

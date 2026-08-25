@@ -30,8 +30,40 @@
         "js"
       ],
       "related_bugs": [],
-      "occurrences": 3,
-      "last_seen": "2026-08-25T07:02:23.387Z"
+      "occurrences": 6,
+      "last_seen": "2026-08-25T07:05:54.366Z"
+    },
+    {
+      "id": "bug-003",
+      "timestamp": "2026-08-25T07:05:39.733Z",
+      "error_message": "Significant refactor of index.html",
+      "file": "index.html",
+      "root_cause": "3 lines replaced/restructured",
+      "fix": "Rewrote 5→6 lines (3 removed) | Also: Click en cualquier nodo visible. Las líneas activa; respira con varias capas de luz.",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "html"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-25T07:05:43.376Z"
+    },
+    {
+      "id": "bug-004",
+      "timestamp": "2026-08-25T07:05:55.786Z",
+      "error_message": "Incorrect value in code",
+      "file": "tests/record.test.js",
+      "root_cause": "Had \"mcp\"",
+      "fix": "Changed to \"chroma\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T07:05:55.786Z"
     }
   ]
 }

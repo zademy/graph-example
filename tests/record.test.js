@@ -25,7 +25,7 @@ describe("Concept Record module", () => {
   test("curated records win over the fallback", () => {
     expect(record("chat-client").desc).toContain("fluent");
     // fallback wording for an uncurated concept
-    expect(record("mcp").desc).toContain("Spring AI");
+    expect(record("chroma").desc).toContain("Spring AI");
   });
 
   test("unlocks are always real graph neighbors", () => {

@@ -1,13 +1,13 @@
 {
   "version": 1,
   "meta": {
-    "lastScanned": "2026-08-25T07:02:23.380Z",
+    "lastScanned": "2026-08-25T07:05:55.778Z",
     "fileCount": 22,
     "hits": 0,
     "misses": 0,
-    "renderedHash": "2759ae29399eee6c5fabfacb8ab2f78a93b1274f1a104b4c155db163e1c88e5c",
-    "storeUpdatedAt": "2026-08-25T07:02:23.386Z",
-    "rootHash": "02beb5e8d8356ffd"
+    "renderedHash": "ce27c355b1cee671e952610a9f4edc5f856d02aee1882ea5beac5e4a9f4e7ac1",
+    "storeUpdatedAt": "2026-08-25T07:05:55.785Z",
+    "rootHash": "4a283700be15dee7"
   },
   "files": {
     ".playwright-mcp/console-2026-08-25T05-59-49-889Z.log": {
@@ -65,12 +65,12 @@
       "source": "scan"
     },
     "index.html": {
-      "description": "Knowledge Graph — Altitude inspired",
-      "tokens": 8730,
-      "hash": "8bc248f3906bf593",
-      "size": 32774,
-      "mtimeMs": 1787640819813.408,
-      "updatedAt": "2026-08-25T06:53:39.860Z",
+      "description": "Spring AI Knowledge Graph — Altitude inspired",
+      "tokens": 4256,
+      "hash": "da466cb6470b166c",
+      "size": 15972,
+      "mtimeMs": 1787641543323.7756,
+      "updatedAt": "2026-08-25T07:05:43.369Z",
       "source": "hook"
     },
     "docs/agents/issue-tracker.md": {
@@ -130,19 +130,19 @@
     "tests/smoke.test.js": {
       "description": "",
       "tokens": 147,
-      "hash": "200ae9d3ec5efa47",
+      "hash": "5b2ebd5c2fa9b45e",
       "size": 513,
-      "mtimeMs": 1787641268189.596,
-      "updatedAt": "2026-08-25T07:01:08.229Z",
+      "mtimeMs": 1787641550119.9006,
+      "updatedAt": "2026-08-25T07:05:50.158Z",
       "source": "hook"
     },
     "src/data.js": {
-      "description": "Spring AI 2.0.1 — seed dataset (tracer slice).",
-      "tokens": 994,
-      "hash": "981d76b3c80e3e79",
-      "size": 3496,
-      "mtimeMs": 1787641340481.746,
-      "updatedAt": "2026-08-25T07:02:20.522Z",
+      "description": "Spring AI 2.0.1 — full dataset.",
+      "tokens": 2857,
+      "hash": "3e33a4e23841c161",
+      "size": 10096,
+      "mtimeMs": 1787641528456.3281,
+      "updatedAt": "2026-08-25T07:05:28.504Z",
       "source": "hook"
     },
     "src/graph.js": {
@@ -222,20 +222,20 @@
     },
     "tests/record.test.js": {
       "description": "Declares id",
-      "tokens": 587,
-      "hash": "745e9534584a8668",
-      "size": 2052,
-      "mtimeMs": 1787641219503.9937,
-      "updatedAt": "2026-08-25T07:00:19.544Z",
+      "tokens": 588,
+      "hash": "b4f0f6f3f29db208",
+      "size": 2055,
+      "mtimeMs": 1787641555739.7175,
+      "updatedAt": "2026-08-25T07:05:55.778Z",
       "source": "hook"
     },
     "tests/render.test.js": {
       "description": "Declares edgeBetween",
-      "tokens": 1352,
-      "hash": "45ca9fed4a15bd84",
-      "size": 4736,
-      "mtimeMs": 1787641343337.451,
-      "updatedAt": "2026-08-25T07:02:23.380Z",
+      "tokens": 1353,
+      "hash": "b742ae40ab3180f8",
+      "size": 4737,
+      "mtimeMs": 1787641554302.3555,
+      "updatedAt": "2026-08-25T07:05:54.358Z",
       "source": "hook",
       "symbols": [
         {

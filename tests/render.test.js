@@ -17,8 +17,8 @@ describe("render(state) — the single render pass", () => {
 
     expect(document.getElementById("traceName").textContent).toBe("chat-client");
     expect(document.querySelectorAll("#selectionLayer .solar-glow").length).toBe(3);
-    // 4 lit (understood or practicing) of 13 total
-    expect(document.getElementById("countText").textContent).toBe("4 of 13 concepts on the tree");
+    // 5 lit (understood or practicing) of 37 total
+    expect(document.getElementById("countText").textContent).toBe("5 of 37 concepts on the tree");
     // status has one source: the node, not a curated record
     expect(document.getElementById("statusTag").textContent).toBe("understood");
     expect(document.getElementById("sideName").textContent).toBe("chat-client");
@@ -54,7 +54,7 @@ describe("render(state) — the single render pass", () => {
     // everything else hides
     expect(group("mcp").style.opacity).toBe("0.08");
     expect(label("rag").style.display).toBe("none");
-    expect(document.getElementById("countText").textContent).toBe("2 of 13 concepts due for review");
+    expect(document.getElementById("countText").textContent).toBe("2 of 37 concepts due for review");
   });
 
   test("regression: selecting under a filter keeps visibility coherent (one writer)", () => {
@@ -72,7 +72,7 @@ describe("render(state) — the single render pass", () => {
     expect(group("vector-store").style.opacity).toBe("");
     expect(group("ai-concepts").style.opacity).not.toBe("");
     expect(document.getElementById("traceName").textContent).toBe("rag");
-    expect(document.getElementById("countText").textContent).toBe("3 of 13 concepts in this section");
+    expect(document.getElementById("countText").textContent).toBe("11 of 37 concepts in this section");
     // the previous selection no longer keeps itself visible
     expect(group("chat-client").style.opacity).not.toBe("");
   });
