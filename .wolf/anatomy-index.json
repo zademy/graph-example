@@ -1,23 +1,44 @@
 {
   "version": 1,
   "meta": {
-    "lastScanned": "2026-08-25T07:26:43.493Z",
-    "fileCount": 23,
+    "lastScanned": "2026-08-25T12:00:00.113Z",
+    "fileCount": 26,
     "hits": 0,
     "misses": 0,
-    "renderedHash": "c2ea0eb63640fcdcef59d26a052ab13652a0f890230589a890766b9f54b71342",
-    "storeUpdatedAt": "2026-08-25T07:26:43.501Z",
-    "rootHash": "c05a12e58e11c1ee"
+    "renderedHash": "581f8d4aa4ae69c5f8ca84d53589c4444c7a0a7a97bfc87796066c577f13647b",
+    "storeUpdatedAt": "2026-08-25T12:00:00.114Z",
+    "rootHash": "686b7c5754ed0356"
   },
   "files": {
+    ".gitignore": {
+      "description": "Git ignore rules",
+      "tokens": 16,
+      "hash": "1777343015fded41",
+      "size": 60,
+      "mtimeMs": 1787640740591.7192,
+      "updatedAt": "2026-08-25T12:00:00.032Z",
+      "source": "scan",
+      "importance": 0.1643
+    },
     ".playwright-mcp/console-2026-08-25T05-59-49-889Z.log": {
       "description": "",
       "tokens": 40,
       "hash": "34f6bdb25dad83b4",
       "size": 148,
       "mtimeMs": 1787637590549.0916,
-      "updatedAt": "2026-08-25T06:02:00.869Z",
-      "source": "scan"
+      "updatedAt": "2026-08-25T12:00:00.033Z",
+      "source": "scan",
+      "importance": 0.1643
+    },
+    ".playwright-mcp/console-2026-08-25T07-08-06-801Z.log": {
+      "description": "",
+      "tokens": 39,
+      "hash": "4e246e2bb6830582",
+      "size": 143,
+      "mtimeMs": 1787641686899.4578,
+      "updatedAt": "2026-08-25T12:00:00.035Z",
+      "source": "scan",
+      "importance": 0.1643
     },
     ".playwright-mcp/page-2026-08-25T05-59-50-867Z.yml": {
       "description": "",
@@ -25,8 +46,9 @@
       "hash": "fc30de754282baa7",
       "size": 15007,
       "mtimeMs": 1787637590870.3213,
-      "updatedAt": "2026-08-25T06:02:00.871Z",
-      "source": "scan"
+      "updatedAt": "2026-08-25T12:00:00.038Z",
+      "source": "scan",
+      "importance": 0.1643
     },
     ".playwright-mcp/page-2026-08-25T06-00-02-433Z.yml": {
       "description": "Declares isOverdue",
@@ -34,8 +56,29 @@
       "hash": "a3cf4896a77c3d75",
       "size": 15503,
       "mtimeMs": 1787637602433.6829,
-      "updatedAt": "2026-08-25T06:02:00.873Z",
-      "source": "scan"
+      "updatedAt": "2026-08-25T12:00:00.039Z",
+      "source": "scan",
+      "importance": 0.1643
+    },
+    ".playwright-mcp/page-2026-08-25T07-08-06-929Z.yml": {
+      "description": "",
+      "tokens": 1960,
+      "hash": "892296de16eddab1",
+      "size": 6873,
+      "mtimeMs": 1787641686929.4124,
+      "updatedAt": "2026-08-25T12:00:00.039Z",
+      "source": "scan",
+      "importance": 0.1643
+    },
+    ".playwright-mcp/page-2026-08-25T07-26-23-577Z.yml": {
+      "description": "",
+      "tokens": 2034,
+      "hash": "68bdb33d10fc2a93",
+      "size": 7134,
+      "mtimeMs": 1787642783578.2952,
+      "updatedAt": "2026-08-25T12:00:00.041Z",
+      "source": "scan",
+      "importance": 0.1643
     },
     "AGENTS.md": {
       "description": "OpenWolf",
@@ -43,62 +86,9 @@
       "hash": "e401f79554a8d796",
       "size": 297,
       "mtimeMs": 1787637720830.9268,
-      "updatedAt": "2026-08-25T06:02:00.873Z",
-      "source": "scan"
-    },
-    "CLAUDE.md": {
-      "description": "OpenWolf",
-      "tokens": 161,
-      "hash": "7479ddf0d6c1e4b4",
-      "size": 641,
-      "mtimeMs": 1787637870665.8044,
-      "updatedAt": "2026-08-25T06:04:30.707Z",
-      "source": "hook"
-    },
-    "GEMINI.md": {
-      "description": "OpenWolf",
-      "tokens": 75,
-      "hash": "e401f79554a8d796",
-      "size": 297,
-      "mtimeMs": 1787637720849.7874,
-      "updatedAt": "2026-08-25T06:02:00.874Z",
-      "source": "scan"
-    },
-    "index.html": {
-      "description": "Spring AI Knowledge Graph — Altitude inspired",
-      "tokens": 4265,
-      "hash": "5a0f5dcbc5bac2e2",
-      "size": 16007,
-      "mtimeMs": 1787642690861.2117,
-      "updatedAt": "2026-08-25T07:24:50.912Z",
-      "source": "hook"
-    },
-    "docs/agents/issue-tracker.md": {
-      "description": "Issue tracker: GitHub",
-      "tokens": 933,
-      "hash": "afd6852a80185217",
-      "size": 3731,
-      "mtimeMs": 1787637885963.694,
-      "updatedAt": "2026-08-25T06:04:46.006Z",
-      "source": "hook"
-    },
-    "docs/agents/domain.md": {
-      "description": "Domain Docs",
-      "tokens": 484,
-      "hash": "edc6d6131fdffc4b",
-      "size": 2033,
-      "mtimeMs": 1787637892086.3894,
-      "updatedAt": "2026-08-25T06:04:52.132Z",
-      "source": "hook"
-    },
-    ".gitignore": {
-      "description": "Git ignore rules",
-      "tokens": 16,
-      "hash": "1777343015fded41",
-      "size": 60,
-      "mtimeMs": 1787640740591.7192,
-      "updatedAt": "2026-08-25T06:52:20.634Z",
-      "source": "hook"
+      "updatedAt": "2026-08-25T12:00:00.042Z",
+      "source": "scan",
+      "importance": 0.1643
     },
     "app.js": {
       "description": "Boot: owns the app state and routes every interaction through",
@@ -106,130 +96,72 @@
       "hash": "c1acad7389584ab6",
       "size": 683,
       "mtimeMs": 1787641181216.6316,
-      "updatedAt": "2026-08-25T06:59:41.275Z",
-      "source": "hook"
+      "updatedAt": "2026-08-25T12:00:00.043Z",
+      "source": "scan",
+      "imports": [
+        "src/render.js"
+      ],
+      "importance": 0.2341
+    },
+    "CLAUDE.md": {
+      "description": "OpenWolf",
+      "tokens": 161,
+      "hash": "7479ddf0d6c1e4b4",
+      "size": 641,
+      "mtimeMs": 1787637870665.8044,
+      "updatedAt": "2026-08-25T12:00:00.044Z",
+      "source": "scan",
+      "importance": 0.1643
+    },
+    "docs/agents/domain.md": {
+      "description": "Domain Docs",
+      "tokens": 484,
+      "hash": "edc6d6131fdffc4b",
+      "size": 2033,
+      "mtimeMs": 1787637892086.3894,
+      "updatedAt": "2026-08-25T12:00:00.045Z",
+      "source": "scan",
+      "importance": 0.1643
+    },
+    "docs/agents/issue-tracker.md": {
+      "description": "Issue tracker: GitHub",
+      "tokens": 933,
+      "hash": "afd6852a80185217",
+      "size": 3731,
+      "mtimeMs": 1787637885963.694,
+      "updatedAt": "2026-08-25T12:00:00.046Z",
+      "source": "scan",
+      "importance": 0.1643
+    },
+    "GEMINI.md": {
+      "description": "OpenWolf",
+      "tokens": 75,
+      "hash": "e401f79554a8d796",
+      "size": 297,
+      "mtimeMs": 1787637720849.7874,
+      "updatedAt": "2026-08-25T12:00:00.046Z",
+      "source": "scan",
+      "importance": 0.1643
+    },
+    "index.html": {
+      "description": "Spring AI Knowledge Graph — Altitude inspired",
+      "tokens": 4265,
+      "hash": "5a0f5dcbc5bac2e2",
+      "size": 16007,
+      "mtimeMs": 1787642690861.2117,
+      "updatedAt": "2026-08-25T12:00:00.048Z",
+      "source": "scan",
+      "importance": 0.1643
     },
     "package.json": {
       "description": "Node.js package manifest",
-      "tokens": 46,
-      "hash": "79bf6fb136f490f6",
-      "size": 158,
-      "mtimeMs": 1787640861584.3716,
-      "updatedAt": "2026-08-25T06:54:21.628Z",
-      "source": "hook"
-    },
-    "vitest.config.js": {
-      "description": "/*.test.js\"]",
-      "tokens": 45,
-      "hash": "3d8e4619641218ee",
-      "size": 157,
-      "mtimeMs": 1787640862537.9216,
-      "updatedAt": "2026-08-25T06:54:22.578Z",
-      "source": "hook"
-    },
-    "tests/smoke.test.js": {
-      "description": "",
-      "tokens": 147,
-      "hash": "5b2ebd5c2fa9b45e",
-      "size": 513,
-      "mtimeMs": 1787641550119.9006,
-      "updatedAt": "2026-08-25T07:05:50.158Z",
-      "source": "hook"
-    },
-    "src/data.js": {
-      "description": "Spring AI 2.0.1 — full dataset.",
-      "tokens": 3041,
-      "hash": "39d05b0c3e937f86",
-      "size": 10754,
-      "mtimeMs": 1787642580656.8176,
-      "updatedAt": "2026-08-25T07:23:00.707Z",
-      "source": "hook"
-    },
-    "src/graph.js": {
-      "description": "Graph module: owns concept adjacency (prerequisite relations).",
-      "tokens": 198,
-      "hash": "0db2f1cb7c179086",
-      "size": 690,
-      "mtimeMs": 1787642590425.372,
-      "updatedAt": "2026-08-25T07:23:10.477Z",
-      "source": "hook"
-    },
-    "src/record.js": {
-      "description": "Concept Record module: the single source of truth for what the panel",
-      "tokens": 404,
-      "hash": "2bb22f53d6bb9844",
-      "size": 1421,
-      "mtimeMs": 1787642595528.3599,
-      "updatedAt": "2026-08-25T07:23:15.582Z",
-      "source": "hook"
-    },
-    "src/render.js": {
-      "description": "render(state): the ONLY writer of the stage's visual channels —",
-      "tokens": 2227,
-      "hash": "9c1df9dc8ab4e09f",
-      "size": 7797,
-      "mtimeMs": 1787642673876.3728,
-      "updatedAt": "2026-08-25T07:24:33.932Z",
-      "source": "hook",
-      "symbols": [
-        {
-          "name": "passesFilter",
-          "kind": "fn",
-          "startLine": 45,
-          "endLine": 49,
-          "tokens": 41
-        },
-        {
-          "name": "svgEl",
-          "kind": "fn",
-          "startLine": 50,
-          "endLine": 55,
-          "tokens": 51
-        },
-        {
-          "name": "createGraphView",
-          "kind": "fn",
-          "startLine": 56,
-          "endLine": 229,
-          "tokens": 1660
-        }
-      ]
-    },
-    "tests/helpers.js": {
-      "description": "Exports loadPage, groupOf, labelOf, edgeBetween",
-      "tokens": 185,
-      "hash": "fe2b398ebfa3e928",
-      "size": 646,
-      "mtimeMs": 1787642705605.1367,
-      "updatedAt": "2026-08-25T07:25:05.668Z",
-      "source": "hook"
-    },
-    "tests/graph.test.js": {
-      "description": "Declares ids",
-      "tokens": 687,
-      "hash": "9649c292a7951db2",
-      "size": 2405,
-      "mtimeMs": 1787642758831.656,
-      "updatedAt": "2026-08-25T07:25:58.886Z",
-      "source": "hook"
-    },
-    "tests/record.test.js": {
-      "description": "Declares id",
-      "tokens": 558,
-      "hash": "53ab929916c417d7",
-      "size": 1955,
-      "mtimeMs": 1787642765350.012,
-      "updatedAt": "2026-08-25T07:26:05.400Z",
-      "source": "hook"
-    },
-    "tests/render.test.js": {
-      "description": "Declares view",
-      "tokens": 1814,
-      "hash": "022dd7eb0aa0ba58",
-      "size": 6354,
-      "mtimeMs": 1787642739355.7007,
-      "updatedAt": "2026-08-25T07:25:39.406Z",
-      "source": "hook"
+      "tokens": 67,
+      "hash": "928d62bdde7be6bc",
+      "size": 234,
+      "mtimeMs": 1787640885621.7087,
+      "updatedAt": "2026-08-25T12:00:00.048Z",
+      "source": "scan",
+      "importance": 0.1643
     },
     "README.md": {
       "description": "Project documentation",
@@ -237,8 +169,162 @@
       "hash": "6b8a6ce5e4427a76",
       "size": 1374,
       "mtimeMs": 1787642803442.589,
-      "updatedAt": "2026-08-25T07:26:43.493Z",
-      "source": "hook"
+      "updatedAt": "2026-08-25T12:00:00.049Z",
+      "source": "scan",
+      "importance": 0.1643
+    },
+    "src/data.js": {
+      "description": "Spring AI 2.0.1 — full dataset.",
+      "tokens": 3041,
+      "hash": "39d05b0c3e937f86",
+      "size": 10754,
+      "mtimeMs": 1787642580656.8176,
+      "updatedAt": "2026-08-25T12:00:00.051Z",
+      "source": "scan",
+      "importance": 1
+    },
+    "src/graph.js": {
+      "description": "Graph module: owns concept adjacency (prerequisite relations).",
+      "tokens": 198,
+      "hash": "0db2f1cb7c179086",
+      "size": 690,
+      "mtimeMs": 1787642590425.372,
+      "updatedAt": "2026-08-25T12:00:00.052Z",
+      "source": "scan",
+      "imports": [
+        "src/data.js"
+      ],
+      "importance": 0.5783
+    },
+    "src/record.js": {
+      "description": "Concept Record module: the single source of truth for what the panel",
+      "tokens": 404,
+      "hash": "2bb22f53d6bb9844",
+      "size": 1421,
+      "mtimeMs": 1787642595528.3599,
+      "updatedAt": "2026-08-25T12:00:00.052Z",
+      "source": "scan",
+      "imports": [
+        "src/data.js",
+        "src/graph.js"
+      ],
+      "importance": 0.3568
+    },
+    "src/render.js": {
+      "description": "render(state): the ONLY writer of the stage's visual channels —",
+      "tokens": 2227,
+      "hash": "9c1df9dc8ab4e09f",
+      "size": 7797,
+      "mtimeMs": 1787642673876.3728,
+      "updatedAt": "2026-08-25T12:00:00.052Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "passesFilter",
+          "kind": "fn",
+          "startLine": 45,
+          "endLine": 48,
+          "tokens": 41
+        },
+        {
+          "name": "svgEl",
+          "kind": "fn",
+          "startLine": 50,
+          "endLine": 54,
+          "tokens": 51
+        },
+        {
+          "name": "createGraphView",
+          "kind": "fn",
+          "startLine": 56,
+          "endLine": 228,
+          "tokens": 1660
+        }
+      ],
+      "symbolSource": "ts",
+      "skeleton": "function passesFilter(id, state) {\nfunction svgEl(doc, name, attrs = {}) {\nexport function createGraphView(doc, { onSelect } = {}) {",
+      "imports": [
+        "src/graph.js",
+        "src/record.js",
+        "src/data.js"
+      ],
+      "importance": 0.4331
+    },
+    "tests/graph.test.js": {
+      "description": "Declares ids",
+      "tokens": 687,
+      "hash": "9649c292a7951db2",
+      "size": 2405,
+      "mtimeMs": 1787642758831.656,
+      "updatedAt": "2026-08-25T12:00:00.054Z",
+      "source": "scan",
+      "imports": [
+        "src/graph.js",
+        "src/data.js"
+      ],
+      "importance": 0.1643
+    },
+    "tests/helpers.js": {
+      "description": "Exports loadPage, groupOf, labelOf, edgeBetween",
+      "tokens": 185,
+      "hash": "fe2b398ebfa3e928",
+      "size": 646,
+      "mtimeMs": 1787642705605.1367,
+      "updatedAt": "2026-08-25T12:00:00.055Z",
+      "source": "scan",
+      "importance": 0.3039
+    },
+    "tests/record.test.js": {
+      "description": "Declares id",
+      "tokens": 558,
+      "hash": "53ab929916c417d7",
+      "size": 1955,
+      "mtimeMs": 1787642765350.012,
+      "updatedAt": "2026-08-25T12:00:00.055Z",
+      "source": "scan",
+      "imports": [
+        "src/record.js",
+        "src/graph.js"
+      ],
+      "importance": 0.1643
+    },
+    "tests/render.test.js": {
+      "description": "Declares view",
+      "tokens": 1814,
+      "hash": "022dd7eb0aa0ba58",
+      "size": 6354,
+      "mtimeMs": 1787642739355.7007,
+      "updatedAt": "2026-08-25T12:00:00.055Z",
+      "source": "scan",
+      "imports": [
+        "src/render.js",
+        "tests/helpers.js"
+      ],
+      "importance": 0.1643
+    },
+    "tests/smoke.test.js": {
+      "description": "",
+      "tokens": 147,
+      "hash": "5b2ebd5c2fa9b45e",
+      "size": 513,
+      "mtimeMs": 1787641550119.9006,
+      "updatedAt": "2026-08-25T12:00:00.056Z",
+      "source": "scan",
+      "imports": [
+        "tests/helpers.js",
+        "app.js"
+      ],
+      "importance": 0.1643
+    },
+    "vitest.config.js": {
+      "description": "/*.test.js\"]",
+      "tokens": 45,
+      "hash": "3d8e4619641218ee",
+      "size": 157,
+      "mtimeMs": 1787640862537.9216,
+      "updatedAt": "2026-08-25T12:00:00.056Z",
+      "source": "scan",
+      "importance": 0.1643
     }
   },
   "preamble": [
