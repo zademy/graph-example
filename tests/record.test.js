@@ -28,16 +28,14 @@ describe("Concept Record module", () => {
     expect(record("chroma").desc).toContain("Spring AI");
   });
 
-  test("unlocks are always real graph neighbors", () => {
+  test("unlocks list every real neighbor — no silent truncation", () => {
     for (const id of graph.ids()) {
-      const neighbors = [...graph.neighbors(id)].filter(x => x !== id);
+      const neighbors = graph.connected(id);
       const listed = record(id).unlocks
         .split(", ")
         .filter(Boolean)
         .map(x => x.replaceAll(" ", "-"));
-      for (const unlocked of listed) {
-        expect(neighbors.includes(unlocked), `${id} unlocks ${unlocked}, not a neighbor`).toBe(true);
-      }
+      expect(listed, `${id} unlocks`).toEqual(neighbors);
     }
   });
 

@@ -3,7 +3,7 @@
 // state = { selected: ConceptId, filter: "all" | "review" | "section" }
 import { graph } from "./graph.js";
 import { record } from "./record.js";
-import { concepts, edgePairs, zones, W, H } from "./data.js";
+import { concepts, edgePairs, zones, SECTION_LABELS, W, H } from "./data.js";
 
 const svgNS = "http://www.w3.org/2000/svg";
 
@@ -14,36 +14,43 @@ const statusStyles = {
   "not yet": { fill:"#2A3244", stroke:"none", radius:3.5 }
 };
 
+// One shared switch over the filter: predicate for visibility, text for
+// the header count. A concept passes if it matches, or if it IS the
+// selection (the traced node stays visible under any filter).
+const FILTERS = {
+  all: {
+    matches: () => true,
+    count: () => {
+      const lit = concepts.filter(n => n.status === "understood" || n.status === "practicing").length;
+      return `${lit} of ${concepts.length} concepts on the tree`;
+    }
+  },
+  review: {
+    matches: n => !!n.review,
+    count: () => {
+      const due = concepts.filter(n => n.review).length;
+      return `${due} of ${concepts.length} concepts due for review`;
+    }
+  },
+  section: {
+    matches: (n, state) => n.section === graph.sectionOf(state.selected),
+    count: (state) => {
+      const section = graph.sectionOf(state.selected);
+      const inSection = concepts.filter(n => n.section === section).length;
+      return `${inSection} of ${concepts.length} concepts in this section`;
+    }
+  }
+};
+
+function passesFilter(id, state) {
+  if (id === state.selected) return true;
+  return FILTERS[state.filter].matches(graph.node(id), state);
+}
+
 function svgEl(doc, name, attrs = {}) {
   const el = doc.createElementNS(svgNS, name);
   Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, String(v)));
   return el;
-}
-
-// A concept passes the filter if it matches, or if it IS the selection
-// (mirrors Altitude: the traced node stays visible under any filter).
-function passesFilter(id, state) {
-  if (state.filter === "all") return true;
-  if (id === state.selected) return true;
-  const n = graph.node(id);
-  if (state.filter === "review") return !!n?.review;
-  if (state.filter === "section") return n?.section === graph.sectionOf(state.selected);
-  return true;
-}
-
-function countText(state) {
-  const total = concepts.length;
-  if (state.filter === "review") {
-    const due = concepts.filter(n => n.review).length;
-    return `${due} of ${total} concepts due for review`;
-  }
-  if (state.filter === "section") {
-    const section = graph.sectionOf(state.selected);
-    const inSection = concepts.filter(n => n.section === section).length;
-    return `${inSection} of ${total} concepts in this section`;
-  }
-  const lit = concepts.filter(n => n.status === "understood" || n.status === "practicing").length;
-  return `${lit} of ${total} concepts on the tree`;
 }
 
 export function createGraphView(doc, { onSelect } = {}) {
@@ -61,15 +68,15 @@ export function createGraphView(doc, { onSelect } = {}) {
   // ---- static construction (zones, edges, nodes, labels) ----
   zones.forEach(z => {
     const t = svgEl(doc, "text", { x:z.x, y:z.y, class:"zone" });
-    t.textContent = z.label;
+    t.textContent = SECTION_LABELS[z.section];
     zonesLayer.appendChild(t);
   });
 
   edgePairs.forEach(([a, b], i) => {
-    const A = graph.node(a), B = graph.node(b);
-    if (!A || !B) return;
+    const from = graph.node(a), to = graph.node(b);
+    if (!from || !to) return;
     const line = svgEl(doc, "line", {
-      x1:A.x, y1:A.y, x2:B.x, y2:B.y, class:"edge",
+      x1:from.x, y1:from.y, x2:to.x, y2:to.y, class:"edge",
       "data-a":a, "data-b":b
     });
     line.style.animationDelay = `${-(i % 8) * .18}s`;
@@ -84,7 +91,8 @@ export function createGraphView(doc, { onSelect } = {}) {
       g.appendChild(svgEl(doc, "circle", { cx:n.x, cy:n.y, r:9, class:"review-ring" }));
     }
 
-    const style = statusStyles[n.status] || statusStyles["not yet"];
+    // the node's look is driven by the record's status — one owner
+    const style = statusStyles[record(n.id).status] || statusStyles["not yet"];
     const core = svgEl(doc, "circle", {
       cx:n.x, cy:n.y,
       r:n.selectedRadius || style.radius,
@@ -101,7 +109,7 @@ export function createGraphView(doc, { onSelect } = {}) {
       cx:n.x, cy:n.y, r:16, class:"node-hit",
       tabindex:"0",
       role:"button",
-      "aria-label":`${n.id}, ${n.status}`
+      "aria-label":`${n.id}, ${record(n.id).status}`
     });
 
     if (onSelect) {
@@ -130,15 +138,15 @@ export function createGraphView(doc, { onSelect } = {}) {
 
   // ---- the single render pass ----
   function render(state) {
-    const n = graph.node(state.selected);
-    if (!n) return;
+    const sel = graph.node(state.selected);
+    if (!sel) return;
 
     // selection halo ("sol")
     selectionLayer.replaceChildren();
     selectionLayer.append(
-      svgEl(doc, "circle", { cx:n.x, cy:n.y, r:20, class:"solar-glow sun-c" }),
-      svgEl(doc, "circle", { cx:n.x, cy:n.y, r:17, class:"solar-glow sun-a" }),
-      svgEl(doc, "circle", { cx:n.x, cy:n.y, r:11, class:"solar-glow sun-b" })
+      svgEl(doc, "circle", { cx:sel.x, cy:sel.y, r:20, class:"solar-glow sun-c" }),
+      svgEl(doc, "circle", { cx:sel.x, cy:sel.y, r:17, class:"solar-glow sun-a" }),
+      svgEl(doc, "circle", { cx:sel.x, cy:sel.y, r:11, class:"solar-glow sun-b" })
     );
 
     const linked = graph.neighbors(state.selected);
@@ -151,69 +159,69 @@ export function createGraphView(doc, { onSelect } = {}) {
       edge.classList.toggle("dim", !isActive);
     });
 
-    nodeGroups.forEach((group, id) => {
+    const applyVisibility = (el, id) => {
       const visible = passesFilter(id, state);
-      group.classList.toggle("dim", visible && !linked.has(id));
-      group.style.opacity = visible ? "" : ".08";
+      el.classList.toggle("dim", visible && !linked.has(id));
+      return visible;
+    };
+
+    nodeGroups.forEach((group, id) => {
+      group.style.opacity = applyVisibility(group, id) ? "" : "0.08";
     });
 
     labelEls.forEach((label, id) => {
-      const visible = passesFilter(id, state);
       label.classList.toggle("active", id === state.selected);
-      label.classList.toggle("dim", visible && !linked.has(id));
-      label.style.display = visible ? "" : "none";
+      label.style.display = applyVisibility(label, id) ? "" : "none";
     });
 
     doc.getElementById("traceName").textContent = state.selected;
-    doc.getElementById("countText").textContent = countText(state);
+    doc.getElementById("countText").textContent = FILTERS[state.filter].count(state);
     updatePanel(state.selected);
   }
 
+  function row(parent, className, cells) {
+    const el = doc.createElement("div");
+    el.className = className;
+    cells.forEach(([cellClass, text]) => {
+      const cell = doc.createElement("div");
+      cell.className = cellClass;
+      cell.textContent = text;
+      el.appendChild(cell);
+    });
+    parent.appendChild(el);
+  }
+
   function updatePanel(id) {
-    const d = record(id);
-    const n = graph.node(id);
+    const rec = record(id);
+    const notYet = rec.status === "not yet";
 
     sideInner.style.animation = "none";
     void sideInner.offsetWidth;
     sideInner.style.animation = "";
 
     doc.getElementById("sideName").textContent = id;
-    doc.getElementById("statusTag").textContent = d.status;
-    doc.getElementById("sideDesc").textContent = d.desc;
-    doc.getElementById("ctaBtn").textContent = d.cta;
-    doc.getElementById("sideNote").textContent = d.note;
+    doc.getElementById("statusTag").textContent = rec.status;
+    doc.getElementById("sideDesc").textContent = rec.desc;
+    doc.getElementById("ctaBtn").textContent = rec.cta;
+    doc.getElementById("sideNote").textContent = rec.note;
 
     const light = doc.getElementById("statusLight");
-    light.style.background = n?.status === "not yet" ? "#4d576b" : "#dfae7b";
-    light.style.boxShadow = n?.status === "not yet"
+    light.style.background = notYet ? "#4d576b" : "#dfae7b";
+    light.style.boxShadow = notYet
       ? "0 0 8px rgba(77,87,107,.3)"
       : "0 0 16px rgba(223,174,123,.65)";
 
     const evidence = doc.getElementById("evidence");
     evidence.replaceChildren();
-    d.evidence.forEach(([text, meta]) => {
-      const item = doc.createElement("div");
-      item.className = "evidence-item";
-      item.innerHTML = `<div class="evidence-text"></div><div class="evidence-meta"></div>`;
-      item.children[0].textContent = text;
-      item.children[1].textContent = meta;
-      evidence.appendChild(item);
-    });
+    rec.evidence.forEach(([text, meta]) => row(evidence, "evidence-item", [["evidence-text", text], ["evidence-meta", meta]]));
 
     const meta = doc.getElementById("meta");
     meta.replaceChildren();
     [
-      ["Last reviewed", d.reviewed],
-      ["Introduced in", d.introduced],
-      ["Unlocks", d.unlocks]
-    ].forEach(([k, v]) => {
-      const row = doc.createElement("div");
-      row.className = "meta-row";
-      row.innerHTML = `<span class="k"></span><span class="v"></span>`;
-      row.children[0].textContent = k;
-      row.children[1].textContent = v;
-      meta.appendChild(row);
-    });
+      ["Last reviewed", rec.reviewed],
+      ["Introduced in", rec.introduced],
+      ["Unlocks", rec.unlocks]
+    ].forEach(([k, v]) => row(meta, "meta-row", [["k", k], ["v", v]]));
   }
 
   return { render };

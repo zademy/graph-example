@@ -17,7 +17,7 @@ for (const [a, b] of edgePairs) {
 export const graph = {
   node: id => byId.get(id),
   neighbors: id => new Set(adjacency.get(id) ?? []),
+  connected: id => [...(adjacency.get(id) ?? [])],
   ids: () => concepts.map(n => n.id),
-  all: () => concepts,
   sectionOf: id => byId.get(id)?.section
 };

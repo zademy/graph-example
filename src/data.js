@@ -114,17 +114,28 @@ export const edgePairs = [
 ];
 
 export const zones = [
-  { x:50, y:100, label:"FUNDAMENTALS" },
-  { x:235, y:88, label:"CHAT MODELS" },
-  { x:75, y:390, label:"TOOLS & AGENTS" },
-  { x:360, y:390, label:"RAG" },
-  { x:495, y:75, label:"OPS" }
+  { section:"fundamentals", x:50, y:100 },
+  { section:"models", x:235, y:88 },
+  { section:"tools", x:75, y:390 },
+  { section:"rag", x:360, y:390 },
+  { section:"ops", x:495, y:75 }
 ];
 
 // Curated Concept Records. NOTE: `status` is intentionally absent —
 // the concept node is the single source of truth for status — and
 // `unlocks` is always derived from the graph.
 export const curated = {
+  "chat-model":{
+    desc:"The ChatModel is the model contract: call(Prompt) and stream(Prompt). Every provider — OpenAI, Anthropic, Ollama… — ships it through its starter.",
+    evidence:[
+      ["Spring AI 2.0.1 (released Aug 21, 2026) targets Java 17 and Spring Boot 4.0.x / 4.1.x.","docs · Getting Started"],
+      ["Pull the BOM spring-ai-bom, then spring-ai-starter-model-openai — no versions to manage.","docs · Dependency Management"]
+    ],
+    reviewed:"1 day ago",
+    introduced:"Fundamentals · docs.spring.io/spring-ai",
+    cta:"Understood — review due",
+    note:"Fading concept: explain call() vs stream() once to keep it lit."
+  },
   "chat-client":{
     desc:"The ChatClient offers a fluent API for chatting with AI models. It hides the provider: the same call site works over OpenAI, Anthropic or Ollama.",
     evidence:[

@@ -29,6 +29,33 @@ describe("graph module", () => {
     expect(graph.neighbors("nope").size).toBe(0);
   });
 
+  test("connected() returns neighbors as an array, self excluded", () => {
+    expect(graph.connected("chat-client")).toEqual(expect.arrayContaining(["chat-model", "prompt-templates", "tool-calling"]));
+    expect(graph.connected("chat-client")).not.toContain("chat-client");
+    expect(graph.connected("nope")).toEqual([]);
+  });
+
+  test("the official prerequisite map is present", () => {
+    // The mandatory pairs from the spec (issue #1), fixed so content
+    // edits can't silently drop a documented dependency.
+    const mandatory = [
+      ["chat-model", "chat-client"],
+      ["chat-client", "prompt-templates"],
+      ["chat-client", "structured-output"],
+      ["chat-client", "advisors"],
+      ["chat-client", "tool-calling"],
+      ["advisors", "chat-memory"],
+      ["embeddings", "vector-store"],
+      ["vector-store", "rag"],
+      ["rag", "question-answer-advisor"],
+      ["tool-calling", "mcp"]
+    ];
+    const present = new Set(edgePairs.map(([a, b]) => `${a}|${b}`));
+    for (const [a, b] of mandatory) {
+      expect(present.has(`${a}|${b}`) || present.has(`${b}|${a}`), `missing official edge ${a}→${b}`).toBe(true);
+    }
+  });
+
   test("ids() covers every concept", () => {
     expect(graph.ids().length).toBe(concepts.length);
   });

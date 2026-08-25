@@ -1,13 +1,13 @@
 {
   "version": 1,
   "meta": {
-    "lastScanned": "2026-08-25T07:10:15.389Z",
-    "fileCount": 22,
+    "lastScanned": "2026-08-25T07:26:43.493Z",
+    "fileCount": 23,
     "hits": 0,
     "misses": 0,
-    "renderedHash": "c864aa87bf5c1ddc9473821cc811c0fc534b272d699b1c4dfc7fbda8e185b2ed",
-    "storeUpdatedAt": "2026-08-25T07:10:15.397Z",
-    "rootHash": "7fee3ade818ca7b7"
+    "renderedHash": "c2ea0eb63640fcdcef59d26a052ab13652a0f890230589a890766b9f54b71342",
+    "storeUpdatedAt": "2026-08-25T07:26:43.501Z",
+    "rootHash": "c05a12e58e11c1ee"
   },
   "files": {
     ".playwright-mcp/console-2026-08-25T05-59-49-889Z.log": {
@@ -66,11 +66,11 @@
     },
     "index.html": {
       "description": "Spring AI Knowledge Graph — Altitude inspired",
-      "tokens": 4256,
-      "hash": "da466cb6470b166c",
-      "size": 15972,
-      "mtimeMs": 1787641543323.7756,
-      "updatedAt": "2026-08-25T07:05:43.369Z",
+      "tokens": 4265,
+      "hash": "5a0f5dcbc5bac2e2",
+      "size": 16007,
+      "mtimeMs": 1787642690861.2117,
+      "updatedAt": "2026-08-25T07:24:50.912Z",
       "source": "hook"
     },
     "docs/agents/issue-tracker.md": {
@@ -138,114 +138,107 @@
     },
     "src/data.js": {
       "description": "Spring AI 2.0.1 — full dataset.",
-      "tokens": 2857,
-      "hash": "3e33a4e23841c161",
-      "size": 10096,
-      "mtimeMs": 1787641528456.3281,
-      "updatedAt": "2026-08-25T07:05:28.504Z",
+      "tokens": 3041,
+      "hash": "39d05b0c3e937f86",
+      "size": 10754,
+      "mtimeMs": 1787642580656.8176,
+      "updatedAt": "2026-08-25T07:23:00.707Z",
       "source": "hook"
     },
     "src/graph.js": {
       "description": "Graph module: owns concept adjacency (prerequisite relations).",
-      "tokens": 190,
-      "hash": "5304331ccbecc029",
-      "size": 662,
-      "mtimeMs": 1787641108089.339,
-      "updatedAt": "2026-08-25T06:58:28.131Z",
+      "tokens": 198,
+      "hash": "0db2f1cb7c179086",
+      "size": 690,
+      "mtimeMs": 1787642590425.372,
+      "updatedAt": "2026-08-25T07:23:10.477Z",
       "source": "hook"
     },
     "src/record.js": {
       "description": "Concept Record module: the single source of truth for what the panel",
-      "tokens": 433,
-      "hash": "64d5d948b88650ed",
-      "size": 1523,
-      "mtimeMs": 1787641140432.7332,
-      "updatedAt": "2026-08-25T06:59:00.477Z",
+      "tokens": 404,
+      "hash": "2bb22f53d6bb9844",
+      "size": 1421,
+      "mtimeMs": 1787642595528.3599,
+      "updatedAt": "2026-08-25T07:23:15.582Z",
       "source": "hook"
     },
     "src/render.js": {
       "description": "render(state): the ONLY writer of the stage's visual channels —",
-      "tokens": 2186,
-      "hash": "e255599b00d7f352",
-      "size": 7653,
-      "mtimeMs": 1787641177089.7063,
-      "updatedAt": "2026-08-25T06:59:37.128Z",
+      "tokens": 2227,
+      "hash": "9c1df9dc8ab4e09f",
+      "size": 7797,
+      "mtimeMs": 1787642673876.3728,
+      "updatedAt": "2026-08-25T07:24:33.932Z",
       "source": "hook",
       "symbols": [
         {
-          "name": "svgEl",
-          "kind": "fn",
-          "startLine": 17,
-          "endLine": 24,
-          "tokens": 92
-        },
-        {
           "name": "passesFilter",
           "kind": "fn",
-          "startLine": 25,
-          "endLine": 33,
-          "tokens": 88
+          "startLine": 45,
+          "endLine": 49,
+          "tokens": 41
         },
         {
-          "name": "countText",
+          "name": "svgEl",
           "kind": "fn",
-          "startLine": 34,
-          "endLine": 48,
-          "tokens": 171
+          "startLine": 50,
+          "endLine": 55,
+          "tokens": 51
         },
         {
           "name": "createGraphView",
           "kind": "fn",
-          "startLine": 49,
-          "endLine": 221,
-          "tokens": 1647
+          "startLine": 56,
+          "endLine": 229,
+          "tokens": 1660
         }
       ]
     },
     "tests/helpers.js": {
-      "description": "Exports loadPage",
-      "tokens": 75,
-      "hash": "63dd6166f79d15ed",
-      "size": 262,
-      "mtimeMs": 1787641202807.1118,
-      "updatedAt": "2026-08-25T07:00:02.853Z",
+      "description": "Exports loadPage, groupOf, labelOf, edgeBetween",
+      "tokens": 185,
+      "hash": "fe2b398ebfa3e928",
+      "size": 646,
+      "mtimeMs": 1787642705605.1367,
+      "updatedAt": "2026-08-25T07:25:05.668Z",
       "source": "hook"
     },
     "tests/graph.test.js": {
       "description": "Declares ids",
-      "tokens": 356,
-      "hash": "cddc22a52315d1c2",
-      "size": 1245,
-      "mtimeMs": 1787641209092.2622,
-      "updatedAt": "2026-08-25T07:00:09.138Z",
+      "tokens": 687,
+      "hash": "9649c292a7951db2",
+      "size": 2405,
+      "mtimeMs": 1787642758831.656,
+      "updatedAt": "2026-08-25T07:25:58.886Z",
       "source": "hook"
     },
     "tests/record.test.js": {
       "description": "Declares id",
-      "tokens": 588,
-      "hash": "b4f0f6f3f29db208",
-      "size": 2055,
-      "mtimeMs": 1787641555739.7175,
-      "updatedAt": "2026-08-25T07:05:55.778Z",
+      "tokens": 558,
+      "hash": "53ab929916c417d7",
+      "size": 1955,
+      "mtimeMs": 1787642765350.012,
+      "updatedAt": "2026-08-25T07:26:05.400Z",
       "source": "hook"
     },
     "tests/render.test.js": {
-      "description": "Declares edgeBetween",
-      "tokens": 1842,
-      "hash": "efb41ddf0a2655c2",
-      "size": 6452,
-      "mtimeMs": 1787641815338.5557,
-      "updatedAt": "2026-08-25T07:10:15.389Z",
-      "source": "hook",
-      "symbols": [
-        {
-          "name": "edgeBetween",
-          "kind": "fn",
-          "startLine": 5,
-          "endLine": 126,
-          "tokens": 1798
-        }
-      ]
+      "description": "Declares view",
+      "tokens": 1814,
+      "hash": "022dd7eb0aa0ba58",
+      "size": 6354,
+      "mtimeMs": 1787642739355.7007,
+      "updatedAt": "2026-08-25T07:25:39.406Z",
+      "source": "hook"
+    },
+    "README.md": {
+      "description": "Project documentation",
+      "tokens": 339,
+      "hash": "6b8a6ce5e4427a76",
+      "size": 1374,
+      "mtimeMs": 1787642803442.589,
+      "updatedAt": "2026-08-25T07:26:43.493Z",
+      "source": "hook"
     }
   },
   "preamble": [
