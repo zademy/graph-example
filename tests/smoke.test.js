@@ -1,17 +1,12 @@
-import { readFileSync } from "node:fs";
 import { expect, test } from "vitest";
-
-const html = readFileSync(`${process.cwd()}/index.html`, "utf8");
-const body = html
-  .match(/<body>([\s\S]*)<\/body>/)[1]
-  .replace(/<script[\s\S]*?<\/script>/g, "");
+import { loadPage } from "./helpers.js";
 
 test("boot renders every concept and the initial panel", async () => {
-  document.body.innerHTML = body;
+  loadPage();
   await import("../app.js");
 
-  expect(document.querySelectorAll("#nodesLayer .node-set").length).toBe(41);
-  expect(document.querySelectorAll("#labelsLayer .label").length).toBe(41);
-  expect(document.getElementById("traceName").textContent).toBe("variables");
-  expect(document.getElementById("statusTag").textContent).toBe("practicing");
+  expect(document.querySelectorAll("#nodesLayer .node-set").length).toBe(13);
+  expect(document.querySelectorAll("#labelsLayer .label").length).toBe(13);
+  expect(document.getElementById("traceName").textContent).toBe("chat-client");
+  expect(document.getElementById("statusTag").textContent).toBe("understood");
 });

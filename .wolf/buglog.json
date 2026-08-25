@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "bugs": [
+    {
+      "id": "bug-001",
+      "timestamp": "2026-08-25T06:55:56.255Z",
+      "error_message": "Significant refactor of smoke.test.js",
+      "file": "tests/smoke.test.js",
+      "root_cause": "2 lines replaced/restructured",
+      "fix": "Rewrote 5→4 lines (2 removed)",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-25T06:55:56.255Z"
+    },
+    {
+      "id": "bug-002",
+      "timestamp": "2026-08-25T07:01:29.001Z",
+      "error_message": "Incorrect value in code",
+      "file": "tests/render.test.js",
+      "root_cause": "Had \"tool-calling\"",
+      "fix": "Changed to \".07\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-08-25T07:02:23.387Z"
+    }
+  ]
+}

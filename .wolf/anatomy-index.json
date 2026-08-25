@@ -1,0 +1,256 @@
+{
+  "version": 1,
+  "meta": {
+    "lastScanned": "2026-08-25T07:02:23.380Z",
+    "fileCount": 22,
+    "hits": 0,
+    "misses": 0,
+    "renderedHash": "2759ae29399eee6c5fabfacb8ab2f78a93b1274f1a104b4c155db163e1c88e5c",
+    "storeUpdatedAt": "2026-08-25T07:02:23.386Z",
+    "rootHash": "02beb5e8d8356ffd"
+  },
+  "files": {
+    ".playwright-mcp/console-2026-08-25T05-59-49-889Z.log": {
+      "description": "",
+      "tokens": 40,
+      "hash": "34f6bdb25dad83b4",
+      "size": 148,
+      "mtimeMs": 1787637590549.0916,
+      "updatedAt": "2026-08-25T06:02:00.869Z",
+      "source": "scan"
+    },
+    ".playwright-mcp/page-2026-08-25T05-59-50-867Z.yml": {
+      "description": "",
+      "tokens": 4268,
+      "hash": "fc30de754282baa7",
+      "size": 15007,
+      "mtimeMs": 1787637590870.3213,
+      "updatedAt": "2026-08-25T06:02:00.871Z",
+      "source": "scan"
+    },
+    ".playwright-mcp/page-2026-08-25T06-00-02-433Z.yml": {
+      "description": "Declares isOverdue",
+      "tokens": 4405,
+      "hash": "a3cf4896a77c3d75",
+      "size": 15503,
+      "mtimeMs": 1787637602433.6829,
+      "updatedAt": "2026-08-25T06:02:00.873Z",
+      "source": "scan"
+    },
+    "AGENTS.md": {
+      "description": "OpenWolf",
+      "tokens": 75,
+      "hash": "e401f79554a8d796",
+      "size": 297,
+      "mtimeMs": 1787637720830.9268,
+      "updatedAt": "2026-08-25T06:02:00.873Z",
+      "source": "scan"
+    },
+    "CLAUDE.md": {
+      "description": "OpenWolf",
+      "tokens": 161,
+      "hash": "7479ddf0d6c1e4b4",
+      "size": 641,
+      "mtimeMs": 1787637870665.8044,
+      "updatedAt": "2026-08-25T06:04:30.707Z",
+      "source": "hook"
+    },
+    "GEMINI.md": {
+      "description": "OpenWolf",
+      "tokens": 75,
+      "hash": "e401f79554a8d796",
+      "size": 297,
+      "mtimeMs": 1787637720849.7874,
+      "updatedAt": "2026-08-25T06:02:00.874Z",
+      "source": "scan"
+    },
+    "index.html": {
+      "description": "Knowledge Graph — Altitude inspired",
+      "tokens": 8730,
+      "hash": "8bc248f3906bf593",
+      "size": 32774,
+      "mtimeMs": 1787640819813.408,
+      "updatedAt": "2026-08-25T06:53:39.860Z",
+      "source": "hook"
+    },
+    "docs/agents/issue-tracker.md": {
+      "description": "Issue tracker: GitHub",
+      "tokens": 933,
+      "hash": "afd6852a80185217",
+      "size": 3731,
+      "mtimeMs": 1787637885963.694,
+      "updatedAt": "2026-08-25T06:04:46.006Z",
+      "source": "hook"
+    },
+    "docs/agents/domain.md": {
+      "description": "Domain Docs",
+      "tokens": 484,
+      "hash": "edc6d6131fdffc4b",
+      "size": 2033,
+      "mtimeMs": 1787637892086.3894,
+      "updatedAt": "2026-08-25T06:04:52.132Z",
+      "source": "hook"
+    },
+    ".gitignore": {
+      "description": "Git ignore rules",
+      "tokens": 16,
+      "hash": "1777343015fded41",
+      "size": 60,
+      "mtimeMs": 1787640740591.7192,
+      "updatedAt": "2026-08-25T06:52:20.634Z",
+      "source": "hook"
+    },
+    "app.js": {
+      "description": "Boot: owns the app state and routes every interaction through",
+      "tokens": 196,
+      "hash": "c1acad7389584ab6",
+      "size": 683,
+      "mtimeMs": 1787641181216.6316,
+      "updatedAt": "2026-08-25T06:59:41.275Z",
+      "source": "hook"
+    },
+    "package.json": {
+      "description": "Node.js package manifest",
+      "tokens": 46,
+      "hash": "79bf6fb136f490f6",
+      "size": 158,
+      "mtimeMs": 1787640861584.3716,
+      "updatedAt": "2026-08-25T06:54:21.628Z",
+      "source": "hook"
+    },
+    "vitest.config.js": {
+      "description": "/*.test.js\"]",
+      "tokens": 45,
+      "hash": "3d8e4619641218ee",
+      "size": 157,
+      "mtimeMs": 1787640862537.9216,
+      "updatedAt": "2026-08-25T06:54:22.578Z",
+      "source": "hook"
+    },
+    "tests/smoke.test.js": {
+      "description": "",
+      "tokens": 147,
+      "hash": "200ae9d3ec5efa47",
+      "size": 513,
+      "mtimeMs": 1787641268189.596,
+      "updatedAt": "2026-08-25T07:01:08.229Z",
+      "source": "hook"
+    },
+    "src/data.js": {
+      "description": "Spring AI 2.0.1 — seed dataset (tracer slice).",
+      "tokens": 994,
+      "hash": "981d76b3c80e3e79",
+      "size": 3496,
+      "mtimeMs": 1787641340481.746,
+      "updatedAt": "2026-08-25T07:02:20.522Z",
+      "source": "hook"
+    },
+    "src/graph.js": {
+      "description": "Graph module: owns concept adjacency (prerequisite relations).",
+      "tokens": 190,
+      "hash": "5304331ccbecc029",
+      "size": 662,
+      "mtimeMs": 1787641108089.339,
+      "updatedAt": "2026-08-25T06:58:28.131Z",
+      "source": "hook"
+    },
+    "src/record.js": {
+      "description": "Concept Record module: the single source of truth for what the panel",
+      "tokens": 433,
+      "hash": "64d5d948b88650ed",
+      "size": 1523,
+      "mtimeMs": 1787641140432.7332,
+      "updatedAt": "2026-08-25T06:59:00.477Z",
+      "source": "hook"
+    },
+    "src/render.js": {
+      "description": "render(state): the ONLY writer of the stage's visual channels —",
+      "tokens": 2186,
+      "hash": "e255599b00d7f352",
+      "size": 7653,
+      "mtimeMs": 1787641177089.7063,
+      "updatedAt": "2026-08-25T06:59:37.128Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "svgEl",
+          "kind": "fn",
+          "startLine": 17,
+          "endLine": 24,
+          "tokens": 92
+        },
+        {
+          "name": "passesFilter",
+          "kind": "fn",
+          "startLine": 25,
+          "endLine": 33,
+          "tokens": 88
+        },
+        {
+          "name": "countText",
+          "kind": "fn",
+          "startLine": 34,
+          "endLine": 48,
+          "tokens": 171
+        },
+        {
+          "name": "createGraphView",
+          "kind": "fn",
+          "startLine": 49,
+          "endLine": 221,
+          "tokens": 1647
+        }
+      ]
+    },
+    "tests/helpers.js": {
+      "description": "Exports loadPage",
+      "tokens": 75,
+      "hash": "63dd6166f79d15ed",
+      "size": 262,
+      "mtimeMs": 1787641202807.1118,
+      "updatedAt": "2026-08-25T07:00:02.853Z",
+      "source": "hook"
+    },
+    "tests/graph.test.js": {
+      "description": "Declares ids",
+      "tokens": 356,
+      "hash": "cddc22a52315d1c2",
+      "size": 1245,
+      "mtimeMs": 1787641209092.2622,
+      "updatedAt": "2026-08-25T07:00:09.138Z",
+      "source": "hook"
+    },
+    "tests/record.test.js": {
+      "description": "Declares id",
+      "tokens": 587,
+      "hash": "745e9534584a8668",
+      "size": 2052,
+      "mtimeMs": 1787641219503.9937,
+      "updatedAt": "2026-08-25T07:00:19.544Z",
+      "source": "hook"
+    },
+    "tests/render.test.js": {
+      "description": "Declares edgeBetween",
+      "tokens": 1352,
+      "hash": "45ca9fed4a15bd84",
+      "size": 4736,
+      "mtimeMs": 1787641343337.451,
+      "updatedAt": "2026-08-25T07:02:23.380Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "edgeBetween",
+          "kind": "fn",
+          "startLine": 5,
+          "endLine": 92,
+          "tokens": 1308
+        }
+      ]
+    }
+  },
+  "preamble": [
+    "> Project structure index. Auto-maintained by OpenWolf hooks and daemon.",
+    "> Run `openwolf scan` to generate, or wait for the first Claude Code session.",
+    "> Status: Pending initial scan"
+  ]
+}
