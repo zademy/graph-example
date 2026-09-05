@@ -1,13 +1,13 @@
 {
   "version": 1,
   "meta": {
-    "lastScanned": "2026-08-25T22:06:48.669Z",
+    "lastScanned": "2026-08-27T03:42:52.051Z",
     "fileCount": 26,
     "hits": 0,
     "misses": 0,
-    "renderedHash": "1dc552897dd6afc257ff983a7bf3bce8bdca8abeed9e529d702f728583e40c5e",
-    "storeUpdatedAt": "2026-08-25T22:06:48.674Z",
-    "rootHash": "686b7c5754ed0356"
+    "renderedHash": "5b90218ca95d47ed70fc753477bf4cba78978ec56ba7d97300f61029b3c69ffd",
+    "storeUpdatedAt": "2026-08-27T03:42:52.058Z",
+    "rootHash": "e6fda8f1cc66966c"
   },
   "files": {
     ".gitignore": {
@@ -91,13 +91,29 @@
       "importance": 0.1643
     },
     "app.js": {
-      "description": "Declares state",
-      "tokens": 440,
-      "hash": "4120725c67fd3986",
-      "size": 1541,
-      "mtimeMs": 1787688633828.0803,
-      "updatedAt": "2026-08-25T20:10:43.672Z",
-      "source": "hook"
+      "description": "Boot: owns the app state and routes every interaction through",
+      "tokens": 609,
+      "hash": "5b6787ce1003b121",
+      "size": 2133,
+      "mtimeMs": 1787802171998.292,
+      "updatedAt": "2026-08-27T03:42:52.050Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "applyTheme",
+          "kind": "fn",
+          "startLine": 45,
+          "endLine": 50,
+          "tokens": 60
+        },
+        {
+          "name": "storedTheme",
+          "kind": "fn",
+          "startLine": 51,
+          "endLine": 73,
+          "tokens": 144
+        }
+      ]
     },
     "CLAUDE.md": {
       "description": "OpenWolf",
@@ -140,12 +156,12 @@
       "importance": 0.1643
     },
     "index.html": {
-      "description": "",
-      "tokens": 5887,
-      "hash": "f663a8efecb56163",
-      "size": 22091,
-      "mtimeMs": 1787695567325.572,
-      "updatedAt": "2026-08-25T22:06:07.414Z",
+      "description": "Spring AI Knowledge Graph — Banamex inspired",
+      "tokens": 5680,
+      "hash": "80381badf00a138d",
+      "size": 21313,
+      "mtimeMs": 1787802037744.52,
+      "updatedAt": "2026-08-27T03:40:37.800Z",
       "source": "hook"
     },
     "package.json": {
@@ -179,16 +195,12 @@
     },
     "src/graph.js": {
       "description": "Graph module: owns concept adjacency (prerequisite relations).",
-      "tokens": 198,
-      "hash": "0db2f1cb7c179086",
-      "size": 690,
-      "mtimeMs": 1787642590425.372,
-      "updatedAt": "2026-08-25T12:00:00.052Z",
-      "source": "scan",
-      "imports": [
-        "src/data.js"
-      ],
-      "importance": 0.5783
+      "tokens": 311,
+      "hash": "c26979575daca9e6",
+      "size": 1089,
+      "mtimeMs": 1787801598228.088,
+      "updatedAt": "2026-08-27T03:33:18.280Z",
+      "source": "hook"
     },
     "src/record.js": {
       "description": "Concept Record module: the single source of truth for what the panel",
@@ -215,17 +227,12 @@
     },
     "tests/graph.test.js": {
       "description": "Declares ids",
-      "tokens": 687,
-      "hash": "9649c292a7951db2",
-      "size": 2405,
-      "mtimeMs": 1787642758831.656,
-      "updatedAt": "2026-08-25T12:00:00.054Z",
-      "source": "scan",
-      "imports": [
-        "src/graph.js",
-        "src/data.js"
-      ],
-      "importance": 0.1643
+      "tokens": 1086,
+      "hash": "1daf286e5bc61e3c",
+      "size": 3800,
+      "mtimeMs": 1787801549705.92,
+      "updatedAt": "2026-08-27T03:32:29.764Z",
+      "source": "hook"
     },
     "tests/helpers.js": {
       "description": "Exports loadPage, groupOf, labelOf, edgeBetween",

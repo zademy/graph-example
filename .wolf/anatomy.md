@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-08-25T22:06:48.669Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-08-27T03:42:52.051Z
 > Files: 26 tracked | Anatomy hits: 0 | Misses: 0
 
 > Project structure index. Auto-maintained by OpenWolf hooks and daemon.
@@ -11,10 +11,10 @@
 
 - `.gitignore` — Git ignore rules (~16 tok)
 - `AGENTS.md` — OpenWolf (~75 tok)
-- `app.js` — Declares state (~440 tok)
+- `app.js` — Boot: owns the app state and routes every interaction through (~609 tok)
 - `CLAUDE.md` — OpenWolf (~161 tok)
 - `GEMINI.md` — OpenWolf (~75 tok)
-- `index.html` (~5887 tok)
+- `index.html` — Spring AI Knowledge Graph — Banamex inspired (~5680 tok)
 - `package.json` — Node.js package manifest (~67 tok)
 - `README.md` — Project documentation (~339 tok)
 - `vitest.config.js` — /*.test.js"] (~45 tok)
@@ -36,13 +36,13 @@
 ## src/
 
 - `data.js` — Exports W, H, SECTION_LABELS, concepts + 3 more (~3366 tok)
-- `graph.js` — Graph module: owns concept adjacency (prerequisite relations). (~198 tok)
+- `graph.js` — Graph module: owns concept adjacency (prerequisite relations). (~311 tok)
 - `record.js` — Concept Record module: the single source of truth for what the panel (~404 tok)
 - `render.js` — Exports createGraphView (~2246 tok)
 
 ## tests/
 
-- `graph.test.js` — Declares ids (~687 tok)
+- `graph.test.js` — Declares ids (~1086 tok)
 - `helpers.js` — Exports loadPage, groupOf, labelOf, edgeBetween (~185 tok)
 - `record.test.js` — Declares id (~558 tok)
 - `render.test.js` — Declares view (~1814 tok)

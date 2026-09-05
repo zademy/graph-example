@@ -8,10 +8,10 @@
   <style>
     :root{
       color-scheme:dark;
-      --bg:#060B16;
-      --bg-glow:rgba(240,112,79,.045);
-      --panel:#0A1424;
-      --panel-2:#0D1A2E;
+      --bg:#11141B;
+      --bg-glow:rgba(240,112,79,.05);
+      --panel:#161B25;
+      --panel-2:#1A212D;
       --border:rgba(255,255,255,.08);
       --text:#EDF2F9;
       --muted:#8496AE;
@@ -37,7 +37,7 @@
       --stage-glow-2:rgba(27,168,160,.045);
       --grid-line:rgba(255,255,255,.016);
       --zone-fill:#6E86A6;
-      --edge:#24354D;
+      --edge:#4A6590;
       --edge-glow:drop-shadow(0 0 2px rgba(62,142,224,.5));
       --focus-ring:rgba(160,205,250,.95);
       --node-hover-glow:drop-shadow(0 0 5px rgba(62,142,224,.55));
@@ -45,12 +45,12 @@
       --node-practicing-fill:#14303F;
       --node-introduced:#5B9BD5;
       --node-notyet:#587A9F;
-      --sun-0:#BFE0FF;
-      --sun-1:#3E8EE0;
-      --sun-2:#1BA8A0;
-      --sun-3:#104B84;
-      --sun-ring:rgba(150,200,250,.72);
-      --sun-outer:rgba(62,142,224,.4);
+      --sun-0:#FFE3D8;
+      --sun-1:#F0704F;
+      --sun-2:#EC2023;
+      --sun-3:#5C0E0F;
+      --sun-ring:rgba(250,150,120,.8);
+      --sun-outer:rgba(236,32,35,.38);
       --label:#5F7391;
       --label-imp:#E8F0FA;
       --label-active-glow:0 0 16px rgba(240,112,79,.3);
@@ -105,21 +105,22 @@
       --stage-glow-2:rgba(14,138,130,.05);
       --grid-line:rgba(13,40,76,.05);
       --zone-fill:#4E6884;
-      --edge:#B7C6D8;
+      --edge:#7E99BA;
       --edge-glow:drop-shadow(0 0 2px rgba(16,75,132,.4));
       --focus-ring:rgba(16,75,132,.75);
       --node-hover-glow:drop-shadow(0 0 5px rgba(16,75,132,.4));
       --node-understood:#E8623C;
       --node-practicing-fill:#C9E2DF;
-      --node-introduced:#4A7FB5;
-      --node-notyet:#7E98B6;
+      --node-introduced:#3D6FA5;
+      --node-notyet:#5F7DA0;
+      --dim-opacity:.42;
       --teal:#178A83;
-      --sun-0:#DCEBFB;
-      --sun-1:#3E8EE0;
-      --sun-2:#104B84;
-      --sun-3:#104B84;
-      --sun-ring:rgba(16,75,132,.6);
-      --sun-outer:rgba(16,75,132,.3);
+      --sun-0:#FBE9E2;
+      --sun-1:#E8623C;
+      --sun-2:#D91E21;
+      --sun-3:#8F1214;
+      --sun-ring:rgba(217,83,43,.55);
+      --sun-outer:rgba(217,30,33,.3);
       --label:#5C7089;
       --label-imp:#142E4D;
       --label-active-glow:0 0 16px rgba(217,83,43,.25);
@@ -329,9 +330,9 @@
 
     .edge{
       stroke:var(--edge);
-      stroke-width:.8;
+      stroke-width:.9;
       stroke-linecap:round;
-      opacity:.48;
+      opacity:.62;
       fill:none;
       stroke-dasharray:2.2 5;
       animation:edgeFlow 11.5s linear infinite;
@@ -405,7 +406,7 @@
     }
 
     .node-set.dim .node-core{
-      opacity:.22;
+      opacity:var(--dim-opacity,.22);
     }
 
     .review-ring{

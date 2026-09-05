@@ -1,6 +1,7 @@
 // Boot: owns the app state and routes every interaction through
 // a single render pass. Nothing else writes to the stage.
 import { createGraphView } from "./src/render.js";
+import { graph } from "./src/graph.js";
 
 const state = { selected: "chat-client", filter: "all" };
 
@@ -10,6 +11,20 @@ const view = createGraphView(document, {
     view.render(state);
   },
 });
+
+// ---- idle tour: rotate the selection among parent nodes every 3s ----
+// Manual clicks still win — the tour simply continues from wherever
+// the user left the selection. Disabled under prefers-reduced-motion.
+const canQueryMotion = typeof window.matchMedia === "function";
+const reduceMotion =
+  canQueryMotion &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (!reduceMotion && graph.parents().length > 1) {
+  setInterval(() => {
+    state.selected = graph.nextParent(state.selected);
+    view.render(state);
+  }, 3000);
+}
 
 const filterButtons = document.querySelectorAll("[data-filter]");
 

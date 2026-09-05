@@ -177,6 +177,55 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-08-25T22:06:48.694Z"
+    },
+    {
+      "id": "bug-012",
+      "timestamp": "2026-08-27T03:32:04.749Z",
+      "error_message": "Wrong reference: 24354D should be 4A6590",
+      "file": "index.html",
+      "root_cause": "Used \"24354D\" instead of \"4A6590\"",
+      "fix": "Changed 24354D → 4A6590",
+      "tags": [
+        "auto-detected",
+        "wrong-reference",
+        "html"
+      ],
+      "related_bugs": [],
+      "occurrences": 2,
+      "last_seen": "2026-08-27T03:32:07.290Z"
+    },
+    {
+      "id": "bug-013",
+      "timestamp": "2026-08-27T03:42:52.062Z",
+      "error_message": "Wrong condition in logic",
+      "file": "app.js",
+      "root_cause": "Condition was: if (!reduceMotion.matches && graph.parents()",
+      "fix": "Changed to: if (!reduceMotion && graph.parents()",
+      "tags": [
+        "auto-detected",
+        "logic-fix",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-08-27T03:42:52.062Z"
+    },
+    {
+      "id": "bug-014",
+      "timestamp": "2026-08-27T03:45:00.000Z",
+      "error_message": "TypeError: window.matchMedia is not a function en app.js:18 al correr vitest",
+      "file": "app.js",
+      "root_cause": "El auto-tour llamaba window.matchMedia sin guarda; el DOM mínimo del smoke test (jsdom sin url http) no implementa matchMedia",
+      "fix": "Guarda typeof window.matchMedia === 'function' antes de consultar prefers-reduced-motion (si no existe, el tour arranca igual)",
+      "tags": [
+        "matchMedia",
+        "jsdom",
+        "vitest",
+        "prefers-reduced-motion"
+      ],
+      "related_bugs": ["bug-008"],
+      "occurrences": 1,
+      "last_seen": "2026-08-27T03:45:00.000Z"
     }
   ]
 }

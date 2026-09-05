@@ -59,4 +59,38 @@ describe("graph module", () => {
   test("ids() covers every concept", () => {
     expect(graph.ids().length).toBe(concepts.length);
   });
+
+  test("parents() lists concepts with at least one child, no duplicates", () => {
+    const parents = graph.parents();
+    const expected = new Set(edgePairs.map(([a]) => a));
+    // every id listed actually has a child edge
+    for (const id of parents) {
+      expect(expected.has(id), `${id} has no child edge`).toBe(true);
+    }
+    // every id with a child edge is listed
+    expect(new Set(parents)).toEqual(expected);
+    // stable order, no duplicates
+    expect(new Set(parents).size).toBe(parents.length);
+    expect(graph.parents()).toEqual(parents);
+  });
+
+  test("nextParent() cycles through the parents in order", () => {
+    const parents = graph.parents();
+    expect(graph.nextParent(parents[0])).toBe(parents[1]);
+    expect(graph.nextParent(parents[parents.length - 1])).toBe(parents[0]);
+    // a full rotation starting anywhere visits every parent exactly once
+    const visited = [];
+    let cur = parents[0];
+    for (let i = 0; i < parents.length; i++) {
+      cur = graph.nextParent(cur);
+      visited.push(cur);
+    }
+    expect(new Set(visited).size).toBe(parents.length);
+  });
+
+  test("nextParent() restarts from the first parent for leaf/unknown ids", () => {
+    const leaf = concepts.find(n => !graph.parents().includes(n.id)).id;
+    expect(graph.nextParent(leaf)).toBe(graph.parents()[0]);
+    expect(graph.nextParent("nope")).toBe(graph.parents()[0]);
+  });
 });
